@@ -1,0 +1,133 @@
+@import 'library';
+
+.app.classic {
+	&.webmeter, .webmeter {
+	}
+
+	.webmeter {
+		div#main {
+			& > div {
+				height: 100%;
+			}
+		}
+	}
+
+	.webmeter-wrap {
+		height: 100%;
+	}
+
+	.webmeter-view {
+		height: 100%;
+		overflow: hidden;
+	}
+
+	/* webmeter report*/
+
+	.webmeter-report {
+		height: 100%;
+		position: relative;
+
+		.tree-header {
+
+			background: #f7f8f8;
+		    border-bottom: solid 1px #ddd;
+		    border-top: solid 1px #ddd;
+		    overflow: hidden;
+		    position: relative;
+		    z-index: 1;
+
+			h3 {
+				margin: 0px auto 0px 5px;
+				color: #529bcd;
+				overflow: hidden;
+				text-overflow: ellipsis;
+				text-transform: capitalize;
+				white-space: nowrap;
+				font-size: 1.5em;
+				line-height: 2em;
+				display: inline-block;
+				vertical-align: middle;
+
+				&:after {
+					content: attr(data-report-count);
+    				margin-left: .5em;
+				}
+			}
+		}
+
+		.tree-body {
+			padding:5px 10px;
+		}
+
+		.jstree{
+			overflow: auto;
+		} 
+
+		.dragbar{
+		   background-color:black;
+		   height:100%;
+		   float: right;
+		   width: 3px;
+		   cursor: col-resize;
+		}
+
+		.column {
+			position: absolute;
+			height: 100%;
+		}
+
+		.left-box {
+			background-color: #fff;
+			width: 15%;
+		}
+
+		.right-box {
+			/*background-color: #0f0;*/
+			left: 15%;
+			right: 0px;
+		}
+
+		.content-holder {
+		    height: 100%;
+		    margin: 0;
+		    overflow: hidden;
+		    padding: 0;
+		    position: relative;
+		    width: 100%;
+		}
+
+		.wm-container {
+		    display: block;
+		    height: 100%;
+		    margin: .5em 1em;
+		    overflow: hidden;
+		    padding: 0;
+		    position: relative;
+
+		    .wm-workspace {
+	    	    clear: both;
+			    display: block;
+			    height: 50px;
+			    line-height: 3.5em;
+			    position: relative;
+			    width: 100%;
+			    background-color: #eee;
+
+			    .left-controls {
+			    	position: relative;
+			    }
+		    }
+		}
+	}
+
+	/*ghost bar for drag bar */
+	#ghostbar{
+	    width:3px;
+	    background-color:#000;
+	    height:100%;
+	    opacity:0.5;
+	    position:absolute;
+	    cursor: col-resize;
+	    z-index:999;
+	}
+}

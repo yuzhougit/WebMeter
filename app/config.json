@@ -1,0 +1,27 @@
+{
+  "id" : "webmeter",
+  "name" : "WebMeter",
+  "version" : "1.0",
+  "desc" : "Web Performance Test Platform",
+  "main": false,
+  "globalSearch" : false,
+  "serviceUrl" : "http://nkgmarv.eng.citrite.net/WebMeter/rest",
+  "debugServiceUrl" : "http://localhost:8080/WebMeter/rest",
+  "enableJSONP" : false,
+  "logoClass" : "logo",
+  "topNav" : true,
+  "nav" : "views/navMenu.html",
+  "routers" :[{
+      "name": "report",
+      "url": "/report",
+      "children": [{
+        "name" : "content",
+        "url": "/:rid",
+        "controller": "webmeter.reportContentCtrl",
+        "template" : false
+      }]
+  }, {
+      "name": "plan",
+      "url": "/plan"
+  }]
+}

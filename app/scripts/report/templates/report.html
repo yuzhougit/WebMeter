@@ -1,0 +1,21 @@
+<div ng-controller="webmeter.reportCtrl" class="splittable webmeter-report">
+	<div class="column left-box">
+		<div class="dragbar"></div>
+		<div class="tree-header">
+			<h3 data-report-count="3">Reports</h3>
+		</div>
+
+		<div class="tree-body" tree-directive tree-config="reportTreeConfig" on-init="onInitTree(tree)" on-select-node="onSelectTreeNode(evt, data)"></div>	
+	</div>
+	<div class="column right-box">
+		<div class="content-holder">
+			<div class="wm-container">
+				<div class="wm-workspace">
+					<div class="left-controls pull-left">
+						
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

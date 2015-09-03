@@ -12,10 +12,24 @@
 			<div class="wm-container">
 				<div class="wm-workspace">
 					<div class="left-controls pull-left">
-						
+						{{currentReport.id}}
+					</div>
+				</div>
+				<div class="container-fluid report-detail">
+					<div class="row">
+						<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+							<div class="panel panel-default response-time-pie-panel">
+								<div class="panel-heading">
+			                        <h5 class="nowrap" title="">Response Time Distribution </h5>
+			                    </div>
+								
+							</div>
+						</div>
 					</div>
 				</div>
 			</div>
+			
 		</div>
+		<div ui-view class="hide"></div>
 	</div>
 </div>

@@ -8,15 +8,11 @@ define(['angular', './../../../log', './../../../config'], function(angular, log
 	return ['$scope', '$state', '$stateParams', dataHelperName, function($scope, $state, $stateParams, dataHelper){
 		log.debug("Enter into scope function of reportCtrl");
 
-		//show data for an specific report, improve the logic
-		if(($scope.reportId = $stateParams.rid) === '') {
-			$state.go(config.id + 'Report', {
-				rid: 'gaas20'
-			});
-			return;
-		} else {
-			log.info("Current report id: " + $scope.reportId);
-		}
+        // define a object to record current report infomation
+
+        $scope.currentReport = {
+
+        };
 
 		$scope.reportTreeConfig = {
 			"core" : {
@@ -46,10 +42,12 @@ define(['angular', './../../../log', './../../../config'], function(angular, log
 		$scope.onSelectTreeNode = function(event, data) {
 			if(data.action == "select_node"){
 	            var node = data.node.original;
-	            if(node.id != $scope.reportId){
-	              $state.go(config.id + "Report", {
-	                "rid" : node.id
-	              });
+                log.debug('node ' + node.id + ' is clicked');
+	            if(node.id != $scope.currentReport['id']){
+
+                    $state.go(config.id + "Content", {
+                        "rid" : node.id
+                    });
 	            }
 	        }
 		};

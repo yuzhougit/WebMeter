@@ -12,17 +12,51 @@
 			<div class="wm-container">
 				<div class="wm-workspace">
 					<div class="left-controls pull-left">
-						{{currentReport.id}}
+						<span class="report-title">Summary report for: {{currentReport.id}}</span>
 					</div>
 				</div>
-				<div class="container-fluid report-detail">
-					<div class="row">
-						<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-							<div class="panel panel-default response-time-pie-panel">
-								<div class="panel-heading">
-			                        <h5 class="nowrap" title="">Response Time Distribution </h5>
-			                    </div>
-								
+				<div class="container-fluid wm-content">
+					<div class="summary-report">
+						<div class="row">
+							<div class="col-md-2 boxed-column">
+								<div class="box users">
+									<div class="box-stats max-users">
+										<span class="count">{{currentReport.maxUsers}}</span>
+										<span class="units">VU</span>
+									</div>
+									<div title="Max Users" class="box-kpi">Max Users</div>
+								</div>
+							</div>
+							<div class="col-md-2 boxed-column">
+								<div class="box response">
+									<div class="box-stats">
+										<span class="count">{{currentReport.meanResponse}}</span>
+										<span class="units">ms</span>
+									</div>
+									<div title="Average Repsonse Time" class="box-kpi">Avg. Response Time</div>
+								</div>
+							</div>
+							<div class="col-md-2 boxed-column">
+								<div class="box response">
+									<div class="box-stats">
+										<span class="count">{{currentReport.percentileResponse90}}</span>
+										<span class="units">ms</span>
+									</div>
+									<div title="90% Response Time" class="box-kpi">90% Response Time</div>
+								</div>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-sm-12 col-md-6 boxed-column">
+								<div class="panel panel-default response-time-pie-panel">
+									<div class="panel-heading">
+				                        <h5 class="nowrap" title="">Response Time Distribution </h5>
+				                    </div>
+				                    <div class="panel-body">
+				                    	<div high-chart-renderer chart-options="currentReport.responseTimePieChartConfig" on-init="responseTimePieChartReady(chart)"></div>
+				                    </div>
+									
+								</div>
 							</div>
 						</div>
 					</div>

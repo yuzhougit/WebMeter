@@ -11,6 +11,14 @@ define(['angular', './../../../log', './../../../config'], function(angular, log
         // define a object to record current report infomation
 
         $scope.currentReport = {
+        	'id': null,
+        	'responseTimePieChartConfig' : null // TODO: it does not work when this is set to {}, not sure the casue
+        };
+
+        $scope.responseTimePieChartReady = function(chart) {
+
+        	log.debug('The response Time\'s pie chart is ready');
+
 
         };
 
@@ -59,10 +67,15 @@ define(['angular', './../../../log', './../../../config'], function(angular, log
 			var treeSerach = treeWrap.find('> div');
 			var treeDiv = treeWrap.find('.jstree');
 
+
+			var contentHeader = angular.element('.webmeter-wrap .wm-workspace');
+			var contentBody = angular.element('.webmeter-wrap .wm-content');
+
 			//log.dir(treeWrap.height());
 			//log.dir(treeSerach.height());
 			//log.dir(treeDiv.height());
 			treeDiv.css('height', (scale.height - treeHeader.height() - treeSerach.height() -5) +'px');
+			contentBody.css('height', (scale.height - contentHeader.height()) + 'px');
 		}
 
 		$scope.$on('updateSize', function(){
